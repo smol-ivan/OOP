@@ -94,6 +94,7 @@ class Persona:
 
     def agregar_bolsa(self, articulo):
         self.get_bolsa().append(articulo.get_articulo())
+        self.__dinero -= articulo.get_precio()
 
 
 def puede_comprar_producto(persona, articulo):
@@ -129,7 +130,7 @@ def main():
             else:
                 print(f'Sin suficiete dinero')
 
-    print(f'Cliente 1{persona_1.get_bolsa()}')
+    print(f'Cliente 1{persona_1.get_bolsa(), persona_1.get_dinero()}')
     print(f'Cliente 2{persona_2.get_bolsa()}')
     print(f'Cliente 3{persona_3.get_bolsa()}')
 
